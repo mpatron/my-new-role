@@ -1,0 +1,11 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include my-new-role"
+      include_role:
+        name: "my-new-role"
+    - name: Create a file called '/tmp/helloworld.txt' with the content 'Hello World !'.
+      copy:
+        content: "Hello World !"
+        dest: /tmp/testfile.txt

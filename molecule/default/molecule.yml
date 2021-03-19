@@ -1,0 +1,33 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: CentOS8
+    image: docker.io/centos:centos8
+    privileged: true
+    # command: /sbin/init
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:rw
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+  - name: CentOS7
+    image: docker.io/centos:centos7
+    # command: /sbin/init
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:rw
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+  - name: Ubuntu20.04LTS
+    image: docker.io/ubuntu:20.04
+    # command: /sbin/init
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:rw
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+verifier:
+  name: ansible
