@@ -3,3 +3,7 @@
 - name: Molecule Hello World!
   debug:
     msg: Hello, World !
+- name: Create a file called '/tmp/helloworld.txt' with the content 'Hello World !'.
+  copy:
+    content: "Hello World !"
+    dest: "{{ helloworld_file }}"

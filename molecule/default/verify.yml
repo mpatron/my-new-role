@@ -3,8 +3,23 @@
 
 - name: Verify
   hosts: all
-  gather_facts: false
+  #gather_facts: false
+  vars:
+    - myhelloworld_file: "/tmp/testfile.txt"
   tasks:
   - name: Example assertion
     assert:
       that: true
+  - name: "the file hello World exists"
+    stat:
+      path: "{{ myhelloworld_file }}"
+    register: myfile
+  
+  - name: "Hello - assert that file '{{ myhelloworld_file }}' is created correctly"
+    assert:
+      that:
+        - "myfile.stat.exists"
+        - "myfile.stat.isreg"
+        - "myfile.stat.mode == 644"
+        - "myfile.stat.pw_name == root"
+        - "myfile.stat.gr_name == root"
