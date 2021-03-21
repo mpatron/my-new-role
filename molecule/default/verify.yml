@@ -14,12 +14,11 @@
     stat:
       path: "{{ myhelloworld_file }}"
     register: myfile
-  
   - name: "Hello - assert that file '{{ myhelloworld_file }}' is created correctly"
     assert:
       that:
         - "myfile.stat.exists"
         - "myfile.stat.isreg"
-        - "myfile.stat.mode == 644"
-        - "myfile.stat.pw_name == root"
-        - "myfile.stat.gr_name == root"
+        - "myfile.stat.mode == '0644'"
+        - "myfile.stat.pw_name == 'root'"
+        - "myfile.stat.gr_name == 'root'"
