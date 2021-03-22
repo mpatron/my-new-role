@@ -1,5 +1,5 @@
 ---
-# tasks file for my-new-role
+# tasks file for mynewrole
 - name: Molecule Hello World!
   debug:
     msg: Hello, World !
