@@ -1,0 +1,5 @@
+---
+# file: myplaybook.yml
+- hosts: nodes
+  roles:
+    - my-new-role

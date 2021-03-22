@@ -36,3 +36,6 @@ Author Information
 ------------------
 
 An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+
+Faire des machines virtuelles avec ~\Documents\github\vagrant.cluster4
+ansible -i environments/dev all -m raw -a "uptime"

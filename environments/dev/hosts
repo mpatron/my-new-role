@@ -1,3 +1,4 @@
+---
 # This is the default ansible 'hosts' file.
 #
 # It should live in /etc/ansible/hosts
@@ -7,6 +8,25 @@
 #   - Groups of hosts are delimited by [header] elements
 #   - You can enter hostnames or ip addresses
 #   - A hostname/ip can be a member of multiple groups
+
+nodes:
+  hosts:
+    node0.jobjects.net:
+      ansible_host: "192.168.56.140"
+      ansible_user: "vagrant"
+      ansible_ssh_pass: "vagrant"
+    node1.jobjects.net:
+      ansible_host: "192.168.56.141"
+      ansible_user: "vagrant"
+      ansible_ssh_pass: "vagrant"
+    node2.jobjects.net:
+      ansible_host: "192.168.56.142"
+      ansible_user: "vagrant"
+      ansible_ssh_pass: "vagrant"
+    node3.jobjects.net:
+      ansible_host: "192.168.56.143"
+      ansible_user: "vagrant"
+      ansible_ssh_pass: "vagrant"
 
 # Ex 1: Ungrouped hosts, specify before any group headers.
 
