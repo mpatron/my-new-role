@@ -8,56 +8,43 @@
 #   - Groups of hosts are delimited by [header] elements
 #   - You can enter hostnames or ip addresses
 #   - A hostname/ip can be a member of multiple groups
+all:
+  vars:
+    ansible_user: "vagrant"
+    ansible_ssh_pass: "vagrant"
+    ipaadmin_password: "Welcome1!"
+    ipadm_password: "Welcome1!"
+    ipaserver_domain: "jobjects.net"
+    ipaserver_realm: "JOBJECTS.NET"
 
 nodes:
   hosts:
     node0.jobjects.net:
       ansible_host: "192.168.56.140"
-      ansible_user: "vagrant"
-      ansible_ssh_pass: "vagrant"
     node1.jobjects.net:
       ansible_host: "192.168.56.141"
-      ansible_user: "vagrant"
-      ansible_ssh_pass: "vagrant"
     node2.jobjects.net:
       ansible_host: "192.168.56.142"
-      ansible_user: "vagrant"
-      ansible_ssh_pass: "vagrant"
     node3.jobjects.net:
       ansible_host: "192.168.56.143"
-      ansible_user: "vagrant"
-      ansible_ssh_pass: "vagrant"
 
-# Ex 1: Ungrouped hosts, specify before any group headers.
-
-#green.example.com
-#blue.example.com
-#192.168.100.1
-#192.168.100.10
-
-# Ex 2: A collection of hosts belonging to the 'webservers' group
-
-#[webservers]
-#alpha.example.org
-#beta.example.org
-#192.168.1.100
-#192.168.1.110
-
-# If you have multiple hosts following a pattern you can specify
-# them like this:
-
-#www[001:006].example.com
-
-# Ex 3: A collection of database servers in the 'dbservers' group
-
-#[dbservers]
-#
-#db01.intranet.mydomain.net
-#db02.intranet.mydomain.net
-#10.25.1.56
-#10.25.1.57
-
-# Here's another example of host ranges, this time there are no
-# leading 0s:
-
-#db-[99:101]-node.example.com
+ipaserver:
+  hosts:
+    node0.jobjects.net:
+      ansible_host: "192.168.56.140"
+  vars:
+    ipaserver_setup_dns: yes
+    ipaserver_auto_forwarders: yes
+    ipaserver_ip_addresses: "192.168.56.140"
+ipaclient:
+  host:
+    node1.jobjects.net:
+      ansible_host: "192.168.56.141"
+    node2.jobjects.net:
+      ansible_host: "192.168.56.142"
+    node3.jobjects.net:
+      ansible_host: "192.168.56.143"
+  vars:
+    ipaadmin_password: "Welcome1!"
+    ipaserver_domain: "jobjects.net"
+    ipaserver_realm: "JOBJECTS.NET"

@@ -1,0 +1,7 @@
+---
+collections:
+  # Install a collection from Ansible Galaxy.
+  - name: freeipa.ansible_freeipa
+#roles:
+  # Installing role from Ansible_Galaxy.
+ # - name: community.general.ipa_host

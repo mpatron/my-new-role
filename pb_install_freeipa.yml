@@ -1,0 +1,12 @@
+---
+- name: Playbook to configure IPA server step1
+  hosts: ipaserver
+  become: true
+  collections:
+    - freeipa.ansible_freeipa
+  vars:
+    ipaserver_external_ca: yes
+  tasks:
+    - import_role:
+        name: ipaserver    
+
