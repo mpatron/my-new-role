@@ -38,7 +38,8 @@ ipaserver:
       ansible_host: "192.168.56.140"
   vars:
     ipaserver_setup_dns: yes
-    ipaserver_external_ca: yes
+    ipaserver_setup_kra: yes
+    ipaserver_external_ca: no
     ipaserver_auto_forwarders: yes
     ipaserver_ip_addresses: "192.168.56.140"
 
@@ -51,6 +52,8 @@ ipaclient:
     node3.jobjects.net:
       ansible_host: "192.168.56.143"
   vars:
+    ipaclient_allow_repair: yes
+    ipaclient_mkhomedir: yes
     ipaadmin_password: "Welcome1!"
     ipaserver_domain: "jobjects.net"
     ipaserver_realm: "JOBJECTS.NET"

@@ -10,3 +10,33 @@
   - name: import role from a collection
     import_role:
       name: ipaserver    
+    run_once: true
+  - name: Create user pinky
+    ipauser:
+      ipaadmin_password: "{{ ipaadmin_password }}"
+      name: alice
+      first: Alice
+      last: Savoie
+      uid: 10001
+      gid: 10001
+      phone: "+555123457"
+      email: alice@objects.net
+      passwordexpiration: "2023-01-19 23:59:59"
+      password: "{{ ipaadmin_password }}"
+      update_password: on_create
+  - name: Create user pinky
+    ipauser:
+      ipaadmin_password: "{{ ipaadmin_password }}"
+      name: bob
+      first: Bob
+      last: Marley
+      uid: 10001
+      gid: 10001
+      phone: "+555123457"
+      email: bob@objects.net
+      passwordexpiration: "2023-01-19 23:59:59"
+      password: "{{ ipaadmin_password }}"
+      update_password: on_create
+
+
+      
