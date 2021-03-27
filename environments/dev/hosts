@@ -12,10 +12,14 @@ all:
   vars:
     ansible_user: "vagrant"
     ansible_ssh_pass: "vagrant"
-    ipaadmin_password: "Welcome1!"
+    # Directory Manager
     ipadm_password: "Welcome1!"
+    # admin@JOBJECTS.NET
+    ipaadmin_password: "Welcome1!"
     ipaserver_domain: "jobjects.net"
     ipaserver_realm: "JOBJECTS.NET"
+    ipaserver_idstart: 10000
+    ipaserver_idmax: 20000
 
 nodes:
   hosts:
@@ -34,10 +38,12 @@ ipaserver:
       ansible_host: "192.168.56.140"
   vars:
     ipaserver_setup_dns: yes
+    ipaserver_external_ca: yes
     ipaserver_auto_forwarders: yes
     ipaserver_ip_addresses: "192.168.56.140"
+
 ipaclient:
-  host:
+  hosts:
     node1.jobjects.net:
       ansible_host: "192.168.56.141"
     node2.jobjects.net:

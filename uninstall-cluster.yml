@@ -1,0 +1,38 @@
+---
+- name: Uninstall IPA clients
+  hosts: ipaclients
+  become: true
+  collections:
+    - freeipa.ansible_freeipa
+  tasks:
+  - name: Uninstall IPA clients
+    import_role:
+      name: ipaclient
+    vars:
+      state: absent
+
+- name: Uninstall IPA replicas
+  hosts: ipareplicas
+  become: true
+  collections:
+    - freeipa.ansible_freeipa
+  tasks:
+  - name: Uninstall IPA replicas
+    import_role:
+      name: ipareplica
+    vars:
+      state: absent
+
+- name: Uninstall IPA servers
+  hosts: ipaserver
+  become: true
+  collections:
+    - freeipa.ansible_freeipa
+  tasks:
+  - name: Uninstall IPA servers
+    import_role:
+      name: ipaserver
+    vars:
+      state: absent
+# ansible-playbook -i environments/dev ./uninstall-cluster.yml
+

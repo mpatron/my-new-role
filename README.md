@@ -7,3 +7,5 @@ ansible-playbook -vvv -i environments/dev ./pb_install_freeipa.yml
 
 
 ansible-galaxy install -r requirements.yml
+ansible-galaxy collection verify -r requirements.yml
+ansible-galaxy collection verify freeipa.ansible_freeipa
