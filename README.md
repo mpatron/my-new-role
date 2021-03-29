@@ -14,3 +14,6 @@ ansible-galaxy collection verify freeipa.ansible_freeipa
 yamllint
 --syntax-check
 ansible-lint
+ansible-test sanity
+
+https://serverfault.com/questions/992178/using-variables-in-ansible-script-after-fetching-from-csv-files-inside-a-loop

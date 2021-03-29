@@ -7,3 +7,40 @@
   copy:
     content: "Hello World !"
     dest: "{{ helloworld_file }}"
+#- name: Copy from Local files/users.csv to Remote Target Machine with 'copy'
+#  copy:
+#    src: files/users.csv
+#    dest: /tmp/users.csv
+#    backup: yes
+#- name: check filesystem existence
+#  shell: ls -la /tmp
+#  register: file_exists
+#- name: debug data
+#  debug: 
+#    msg: "{{ file_exists }}"
+- name: check if rules file exists
+  stat: 
+    path: "{{ inventory_dir }}/files/users.csv"
+  register: inventory_users_csv
+- name: CSV from {{ inventory_dir }}/files/users.csv reading
+  read_csv:
+    path: "{{ inventory_dir }}/files/users.csv"
+    key: Name
+    fieldnames: Name,FirstName,LastName,DisplayName,Description,Password
+    delimiter: ';'
+  register: userscsv
+  delegate_to: localhost
+  when: inventory_users_csv.stat.exists == True
+- name: CSV from {{ role_path }}/files/users.csv reading
+  read_csv:
+    path: "{{ role_path }}/files/users.csv"
+    key: Name
+    fieldnames: Name,FirstName,LastName,DisplayName,Description,Password
+    delimiter: ';'
+  register: userscsv
+  delegate_to: localhost
+  when: inventory_users_csv.stat.exists == False
+- name: debug read_csv
+  debug:
+    msg: "{{ item.key }}: {{ item.value.Password }}, {{ item.value.DisplayName }}"
+  loop: "{{ userscsv.dict|dict2items }}"

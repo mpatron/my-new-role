@@ -1,0 +1,19 @@
+Name;FirstName;LastName;DisplayName;Description;Password
+alice;Alice;Savoie;Alice Savoie;Utilisateur exemple de sécurité;r7rXkDGulsE3Qy2veQgZyCf7QPeQEZet
+bob;Bob;Marley;Bob Marley;Utilisateur exemple de sécurité;tc03fdfiY2xaCIBrQlIDdQ5p2iUOZa11
+carole;Carole;Rousseau;Carole Rousseau;Utilisateur exemple de sécurité;3TidXFiBZUh5VcOSXOQX7eHqLNNUYRw3
+dave;Dave;Levenbach;Dave Levenbach;Utilisateur exemple de sécurité;ftsrnzDWeaazmifbP2IEpkT5pndx8SfF
+eve;Eve;Angeli;Eve Angeli;Utilisateur exemple de sécurité;BpF9wATSTW7ey5gvVCLQVP5DByOc070t
+franck;Frank;Dubosc;Frank Dubosc;Utilisateur exemple de sécurité;h-lK-4y4VjNDGfFojhvEM-9Cb4KpG5FQ
+zookeeper;Zookeeper;Hadoop;Zookeeper Hadoop;Utilisateur bigdata;VnvxX51Z3spGNhMW18pHVM41T85tCcQV
+kafka;Kafka;Hadoop;Kafka Hadoop;Utilisateur bigdata;xTNlNv58IZ-M85PtKOmimJOlhYgZmaIh
+solr;Solr;Hadoop;Solr Hadoop;Utilisateur bigdata;KiHt1FxvYMKNzilt-MUwq1RSoypeWRi8
+hive;Hive;Hadoop;Hive Hadoop;Utilisateur bigdata;1lS6R6oHbm-9vanvJfwJ8Vb4rMrUrHgr
+hbase;HBase;Hadoop;HBase Hadoop;Utilisateur bigdata;EGOYw4ZG4TsvEmuCb9fyGe9cHiureYUU
+hdfs;HDFS;Hadoop;HDFS Hadoop;Utilisateur bigdata;Petfksh76L5FJTBvEPM7wSOYr5MDWjL2
+yarn;YARN;Hadoop;YARN Hadoop;Utilisateur bigdata;hbLDOBbJKvrYm8WXSfJ6Fqik4EHXpjsV
+ranger;Ranger;Hadoop;Ranger Hadoop;Utilisateur bigdata;FDqBB6McRm4l8EW3UW9gM6WCbvu8Jmnw
+mapred;MapRed;Hadoop;MapRed Hadoop;Utilisateur bigdata;3uBsY8qvGsDfHDTHxxxZWXupbWGkX0fk
+spark;Spark;Hadoop;Spark Hadoop;Utilisateur bigdata;g089TnvfuJYAGaunUx0KT8KZhm3L31PB
+kms;KMS;Hadoop;KMS Hadoop;Utilisateur bigdata;gLTPaM8v4kZZhUQ8F9KloDvzCXomEM4u
+httpfs;HTTPFS;Hadoop;HTTPFS Hadoop;Utilisateur bigdata;47BP9hbj2Z3sXIVxz10ll66c2EiGDtDt
